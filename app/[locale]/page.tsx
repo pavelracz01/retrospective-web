@@ -1,5 +1,4 @@
 import { setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
 
 export default async function HomePage({
   params,
