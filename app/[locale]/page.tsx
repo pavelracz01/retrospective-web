@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import Products from '@/components/sections/Products';
 import WhyRetrospective from '@/components/sections/WhyRetrospective';
+import Process from '@/components/sections/Process';
 
 export default async function HomePage({
   params,
@@ -18,6 +19,7 @@ export default async function HomePage({
       <Services />
       <Products />
       <WhyRetrospective />
+      <Process />
     </main>
   );
 }
