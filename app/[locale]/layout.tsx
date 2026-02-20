@@ -6,7 +6,13 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Toaster } from '@/components/ui/sonner';
+import { Inter } from 'next/font/google';
 import '../globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -30,7 +36,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className={inter.className} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
