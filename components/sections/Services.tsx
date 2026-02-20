@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { TestTube, Bot, Users, Gauge } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -41,7 +43,7 @@ export default function Services() {
             const Icon = service.icon;
             return (
               <Card
-                key={index}
+                key={service.titleKey}
                 className="p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 border-slate-200 hover:border-red-600/50"
               >
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-red-600 to-orange-500 flex items-center justify-center mb-4">
