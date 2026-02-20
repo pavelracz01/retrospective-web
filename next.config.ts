@@ -4,6 +4,11 @@ import createMDX from '@next/mdx';
 const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   output: 'standalone',
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+  },
 };
 
 const withMDX = createMDX({
