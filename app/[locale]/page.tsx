@@ -4,6 +4,7 @@ import Services from '@/components/sections/Services';
 import Products from '@/components/sections/Products';
 import WhyRetrospective from '@/components/sections/WhyRetrospective';
 import Process from '@/components/sections/Process';
+import Contact from '@/components/sections/Contact';
 
 export default async function HomePage({
   params,
@@ -20,6 +21,7 @@ export default async function HomePage({
       <Products />
       <WhyRetrospective />
       <Process />
+      <Contact />
     </main>
   );
 }

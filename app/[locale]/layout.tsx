@@ -4,6 +4,8 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { locales } from '@/i18n/config';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { Toaster } from '@/components/ui/sonner';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -28,13 +30,21 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col">
-        <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider messages={messages}>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <Toaster />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
