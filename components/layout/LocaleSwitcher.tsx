@@ -18,7 +18,10 @@ export default function LocaleSwitcher() {
   const currentLocale = (params.locale as Locale) || 'sk';
 
   const handleLocaleChange = (newLocale: Locale) => {
-    const newPathname = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+    const newPathname = pathname.replace(
+      new RegExp(`^/${currentLocale}(/|$)`),
+      `/${newLocale}$1`
+    );
     router.push(newPathname);
   };
 
