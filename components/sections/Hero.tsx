@@ -38,7 +38,7 @@ export default function Hero() {
   }, [displayed, deleting, wordIndex]);
 
   return (
-    <section className="relative min-h-screen bg-[#0A0F1E] flex flex-col items-center justify-center text-white overflow-hidden">
+    <section className="relative min-h-screen bg-dark-navy flex flex-col items-center justify-center text-white overflow-hidden">
       {/* SVG grid background */}
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

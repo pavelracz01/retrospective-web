@@ -25,7 +25,7 @@ export default function Products() {
   ];
 
   return (
-    <section id="products" className="py-24 bg-[#0A0F1E]">
+    <section id="products" className="py-24 bg-dark-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">{t('title')}</h2>

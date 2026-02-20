@@ -30,7 +30,7 @@ export default function Process() {
   ];
 
   return (
-    <section id="process" className="py-24 bg-[#0A0F1E]">
+    <section id="process" className="py-24 bg-dark-navy">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Title and Subtitle */}
         <div className="text-center mb-16">
