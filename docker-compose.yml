@@ -1,0 +1,25 @@
+services:
+  retrospective-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: retrospective-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - RESEND_API_KEY=${RESEND_API_KEY}
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.retrospective.rule=Host(`retrospective.sk`)"
+      - "traefik.http.routers.retrospective.entrypoints=websecure"
+      - "traefik.http.routers.retrospective.tls=true"
+      - "traefik.http.routers.retrospective.tls.certresolver=letsencrypt"
+      - "traefik.http.services.retrospective.loadbalancer.server.port=3000"
+
+networks:
+  web:
+    external: true
