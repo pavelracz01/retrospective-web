@@ -8,28 +8,24 @@ export default function Process() {
 
   const steps = [
     {
+      id: 'step1',
       number: '01',
       icon: Search,
-      title: t('step1.title'),
-      desc: t('step1.desc'),
     },
     {
+      id: 'step2',
       number: '02',
       icon: Target,
-      title: t('step2.title'),
-      desc: t('step2.desc'),
     },
     {
+      id: 'step3',
       number: '03',
       icon: Code,
-      title: t('step3.title'),
-      desc: t('step3.desc'),
     },
     {
+      id: 'step4',
       number: '04',
       icon: BarChart,
-      title: t('step4.title'),
-      desc: t('step4.desc'),
     },
   ];
 
@@ -52,7 +48,7 @@ export default function Process() {
             const Icon = step.icon;
             return (
               <div
-                key={step.number}
+                key={step.id}
                 className="relative bg-slate-800/50 rounded-lg p-8 border border-slate-700/50 hover:border-red-600/50 transition-colors"
               >
                 {/* Number Badge */}
@@ -67,12 +63,12 @@ export default function Process() {
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-white mb-3">
-                  {step.title}
+                  {t(`${step.id}.title`)}
                 </h3>
 
                 {/* Description */}
                 <p className="text-slate-400 leading-relaxed">
-                  {step.desc}
+                  {t(`${step.id}.desc`)}
                 </p>
               </div>
             );
