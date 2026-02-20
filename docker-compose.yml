@@ -1,25 +1,33 @@
+version: '3.8'
+
 services:
-  retrospective-web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: retrospective-web
+      args:
+        - BASE_PATH=${PATH_PREFIX:-/retrospective-web}
+    container_name: ${CONTAINER_NAME:-retrospective-web-prod}
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    volumes:
+      - app_data:/app/data
     environment:
+      - ENV=${ENV:-production}
       - NODE_ENV=production
       - RESEND_API_KEY=${RESEND_API_KEY}
-    networks:
-      - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.retrospective.rule=Host(`retrospective.sk`)"
-      - "traefik.http.routers.retrospective.entrypoints=websecure"
-      - "traefik.http.routers.retrospective.tls=true"
-      - "traefik.http.routers.retrospective.tls.certresolver=letsencrypt"
-      - "traefik.http.services.retrospective.loadbalancer.server.port=3000"
+      - "traefik.http.routers.${CONTAINER_NAME:-retrospective-web-prod}.rule=PathPrefix(`${PATH_PREFIX:-/retrospective-web}`)"
+      - "traefik.http.routers.${CONTAINER_NAME:-retrospective-web-prod}.entrypoints=web"
+      - "traefik.http.services.${CONTAINER_NAME:-retrospective-web-prod}.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.${CONTAINER_NAME:-retrospective-web-prod}-strip.stripprefix.prefixes=${PATH_PREFIX:-/retrospective-web}"
+      - "traefik.http.routers.${CONTAINER_NAME:-retrospective-web-prod}.middlewares=${CONTAINER_NAME:-retrospective-web-prod}-strip"
+    networks:
+      - web
 
 networks:
   web:
     external: true
+
+volumes:
+  app_data:

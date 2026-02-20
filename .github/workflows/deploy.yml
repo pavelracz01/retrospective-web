@@ -32,14 +32,36 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
+      - name: Set environment variables
+        run: |
+          echo "APP_DIR=retrospective-web-prod" >> $GITHUB_ENV
+          echo "CONTAINER_NAME=retrospective-web-prod" >> $GITHUB_ENV
+          echo "PATH_PREFIX=/retrospective-web" >> $GITHUB_ENV
+          echo "DEPLOY_ENV=production" >> $GITHUB_ENV
+
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@v1.0.3
+        env:
+          RESEND_KEY: ${{ secrets.RESEND_API_KEY }}
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          envs: RESEND_KEY
           script: |
-            cd /path/to/retrospective-web
-            git pull origin main
-            docker-compose down
-            docker-compose up -d --build
+            set -e
+            cd /opt/apps/${{ env.APP_DIR }}
+            git fetch origin main
+            git reset --hard origin/main
+            cat > .env << ENVEOF
+            CONTAINER_NAME=${{ env.CONTAINER_NAME }}
+            ENV=${{ env.DEPLOY_ENV }}
+            PATH_PREFIX=${{ env.PATH_PREFIX }}
+            RESEND_API_KEY=${RESEND_KEY}
+            ENVEOF
+            docker compose down 2>/dev/null || true
+            docker rm -f ${{ env.CONTAINER_NAME }} 2>/dev/null || true
+            docker compose build --no-cache
+            docker compose up -d
+            docker ps | grep ${{ env.CONTAINER_NAME }}
+            echo "Deployed ${{ env.DEPLOY_ENV }} successfully!"

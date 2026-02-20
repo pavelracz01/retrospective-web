@@ -8,6 +8,11 @@ RUN npm ci
 # Stage 2: Builder
 FROM node:20-alpine AS builder
 WORKDIR /app
+
+# Build argument for base path (e.g., /retrospective-web)
+ARG BASE_PATH=""
+ENV BASE_PATH=${BASE_PATH}
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
