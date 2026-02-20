@@ -5,6 +5,11 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+type ActionResponse =
+  | { success: true }
+  | { success: false; error: string }
+  | { success: false; errors: string[] };
+
 const contactSchema = z.object({
   name: z.string().min(2, 'Name too short').max(100, 'Name too long'),
   email: z.string().email('Invalid email'),
@@ -12,7 +17,7 @@ const contactSchema = z.object({
   message: z.string().min(10, 'Message too short').max(1000, 'Message too long'),
 });
 
-export async function submitContactForm(formData: FormData) {
+export async function submitContactForm(formData: FormData): Promise<ActionResponse> {
   const rawData = {
     name: formData.get('name'),
     email: formData.get('email'),
@@ -25,7 +30,7 @@ export async function submitContactForm(formData: FormData) {
   if (!validationResult.success) {
     return {
       success: false,
-      error: validationResult.error.issues[0].message,
+      errors: validationResult.error.issues.map(issue => issue.message),
     };
   }
 
