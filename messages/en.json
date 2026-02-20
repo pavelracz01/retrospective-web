@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "services": "Services",
+    "products": "Products",
+    "why": "Why Us",
+    "process": "Process",
+    "references": "References",
+    "blog": "Blog",
+    "caseStudies": "Case Studies",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "10+ years of QA experience",
+    "headline": "Quality you can trust.",
+    "headlineBold": "Speed you can feel.",
+    "cta": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive QA coverage for your product",
+    "manual": {
+      "title": "Manual Testing",
+      "desc": "Functional, regression, and UAT testing performed by experienced QA specialists."
+    },
+    "automation": {
+      "title": "Test Automation",
+      "desc": "Robust automated tests with Playwright, Cypress, or Selenium."
+    },
+    "consulting": {
+      "title": "QA Consulting",
+      "desc": "QA process setup, testing strategy, and team mentoring."
+    },
+    "performance": {
+      "title": "Performance Testing",
+      "desc": "Load and performance tests for reliable operation under pressure."
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Innovative solutions in development",
+    "comingSoon": "Coming Soon",
+    "learnMore": "Learn More"
+  },
+  "why": {
+    "title": "Why Retrospective",
+    "subtitle": "Your reliable partner",
+    "stat1": { "value": "10+", "label": "years on market" },
+    "stat2": { "value": "50+", "label": "successful projects" },
+    "stat3": { "value": "100%", "label": "client satisfaction" },
+    "points": [
+      "Experience with startups and enterprise projects",
+      "Flexible cooperation — ad hoc and long-term",
+      "Transparent reporting and communication",
+      "Fast onboarding without unnecessary bureaucracy"
+    ]
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "Proven process for quality results",
+    "step1": { "title": "Analysis", "desc": "Understanding your needs and goals" },
+    "step2": { "title": "Strategy", "desc": "Designing optimal QA approach" },
+    "step3": { "title": "Implementation", "desc": "Executing tests and automation" },
+    "step4": { "title": "Reporting", "desc": "Regular reports and improvements" }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Let's start working together",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company (optional)",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "Error sending message. Please try again."
+  },
+  "footer": {
+    "copyright": "© 2026 Retrospective. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "News and insights from QA",
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Success stories from our clients",
+    "readMore": "Read More",
+    "backToCaseStudies": "Back to Case Studies"
+  }
+}

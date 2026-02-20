@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "services": "Služby",
+    "products": "Produkty",
+    "why": "Proč my",
+    "process": "Jak pracujeme",
+    "references": "Reference",
+    "blog": "Blog",
+    "caseStudies": "Case Studies",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "10+ let zkušeností v QA",
+    "headline": "Kvalita, které můžete věřit.",
+    "headlineBold": "Rychlost, kterou pocítíte.",
+    "cta": "Zjistit více"
+  },
+  "services": {
+    "title": "Naše služby",
+    "subtitle": "Komplexní QA pokrytí pro váš produkt",
+    "manual": {
+      "title": "Manuální testování",
+      "desc": "Funkční, regresní a UAT testování prováděné zkušenými QA specialisty."
+    },
+    "automation": {
+      "title": "Automatizace testů",
+      "desc": "Robustní automatizované testy s Playwright, Cypress nebo Selenium."
+    },
+    "consulting": {
+      "title": "QA Consulting",
+      "desc": "Nastavení QA procesů, strategie testování a mentoring vašeho týmu."
+    },
+    "performance": {
+      "title": "Performance testování",
+      "desc": "Zátěžové a výkonnostní testy pro spolehlivý provoz pod tlakem."
+    }
+  },
+  "products": {
+    "title": "Naše produkty",
+    "subtitle": "Inovativní řešení ve vývoji",
+    "comingSoon": "Již brzy",
+    "learnMore": "Zjistit více"
+  },
+  "why": {
+    "title": "Proč Retrospective",
+    "subtitle": "Váš spolehlivý partner",
+    "stat1": { "value": "10+", "label": "let na trhu" },
+    "stat2": { "value": "50+", "label": "úspěšných projektů" },
+    "stat3": { "value": "100%", "label": "spokojenost klientů" },
+    "points": [
+      "Zkušenosti se startupy i enterprise projekty",
+      "Flexibilní spolupráce — ad hoc i dlouhodobá",
+      "Transparentní reporting a komunikace",
+      "Rychlý onboarding bez zbytečné byrokracie"
+    ]
+  },
+  "process": {
+    "title": "Jak pracujeme",
+    "subtitle": "Ověřený proces pro kvalitní výsledky",
+    "step1": { "title": "Analýza", "desc": "Pochopení vašich potřeb a cílů" },
+    "step2": { "title": "Strategie", "desc": "Návrh optimálního QA přístupu" },
+    "step3": { "title": "Implementace", "desc": "Vykonání testů a automatizace" },
+    "step4": { "title": "Reporting", "desc": "Pravidelné reporty a zlepšení" }
+  },
+  "contact": {
+    "title": "Kontaktujte nás",
+    "subtitle": "Začněme spolupráci",
+    "form": {
+      "name": "Jméno",
+      "email": "Email",
+      "company": "Firma (volitelné)",
+      "message": "Zpráva",
+      "send": "Odeslat zprávu",
+      "sending": "Odesílám..."
+    },
+    "success": "Zpráva úspěšně odeslána! Ozveme se brzy.",
+    "error": "Chyba při odesílání. Zkuste prosím znovu."
+  },
+  "footer": {
+    "copyright": "© 2026 Retrospective. Všechna práva vyhrazena.",
+    "links": {
+      "privacy": "Ochrana soukromí",
+      "terms": "Podmínky použití"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Novinky a poznatky z QA",
+    "readMore": "Číst více",
+    "backToBlog": "Zpět na blog"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Úspěšné projekty našich klientů",
+    "readMore": "Číst více",
+    "backToCaseStudies": "Zpět na case studies"
+  }
+}
