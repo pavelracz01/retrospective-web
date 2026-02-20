@@ -1,18 +1,24 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Rocket, Clock } from 'lucide-react';
+import { Rocket, Clock, LucideIcon } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+
+interface Product {
+  name: string;
+  description: string;
+  eta: string;
+  icon: LucideIcon;
+}
 
 export default function Products() {
   const t = useTranslations('products');
 
   // Placeholder products - will be replaced with actual data from translations
-  const products = [
+  const products: Product[] = [
     {
       name: 'QA Platform',
       description: 'Comprehensive testing management platform',
-      status: 'In Development',
       eta: 'Q2 2026',
       icon: Rocket,
     },
@@ -27,11 +33,11 @@ export default function Products() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => {
+          {products.map((product) => {
             const Icon = product.icon;
             return (
               <Card
-                key={index}
+                key={product.name}
                 className="p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:border-red-600/50 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-4">
